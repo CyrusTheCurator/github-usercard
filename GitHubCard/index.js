@@ -106,7 +106,7 @@ let cardComponent = dataObject => {
   cardInfo.appendChild(bio);
   profile.appendChild(profileAnchorLink);
 
-  //userImg.src = dataObject.data.avatar_url;
+  userImg.src = dataObject.data.avatar_url;
   name.textContent = dataObject.data.name;
   userName.textContent = dataObject.data.login;
   location.textContent = dataObject.data.location;
