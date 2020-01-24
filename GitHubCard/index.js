@@ -36,22 +36,6 @@ followersArray.push("justsml");
 followersArray.push("luishrd");
 followersArray.push("bigknell");
 
-axios.get("https://api.github.com/users/tetondan").then(returnedData => {
-  followersArray.push(returnedData);
-});
-
-axios.get("https://api.github.com/users/dustinmyers").then(returnedData => {
-  followersArray.push(returnedData);
-});
-
-axios.get("https://api.github.com/users/justsml").then(returnedData => {
-  followersArray.push(returnedData);
-});
-
-axios.get("https://api.github.com/users/luishrd").then(returnedData => {
-  followersArray.push(returnedData);
-});
-
 followersArray.forEach(item => {
   axios.get(`https://api.github.com/users/${item}`).then(returnedData => {
     cardsContainer.appendChild(cardComponent(returnedData));
@@ -118,8 +102,6 @@ let cardComponent = dataObject => {
 
   return card;
 };
-
-let testObject = { name: "bill", doesHeDance: "no" };
 
 /* List of LS Instructors Github username's: 
   tetondan
