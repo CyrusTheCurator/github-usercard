@@ -61,6 +61,18 @@ followersArray.forEach(item => {
 </div>
 
 */
+
+let followerFetcher = arg => {
+  let followersObject = `https://api.github.com/users/${arg}/followers`;
+  axios.get(followersObject).then(obj => {
+    obj.data.forEach(userData => {
+      cardsContainer.appendChild(cardComponent(userData));
+    });
+  });
+};
+
+followerFetcher("CyrusTheCurator");
+
 let cardComponent = dataObject => {
   let card = document.createElement("div");
   let userImg = document.createElement("img");
